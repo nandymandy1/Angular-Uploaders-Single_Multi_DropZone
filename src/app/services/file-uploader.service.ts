@@ -32,7 +32,7 @@ export class FileUploaderService {
         }
       ).pipe(
         catchError(this.errorMgmt)
-      )
+      );
   }
 
   uploadFiles(files: File[]): Observable<any> {
@@ -51,7 +51,7 @@ export class FileUploaderService {
         }
       ).pipe(
         catchError(this.errorMgmt)
-      )
+      );
   }
 
   errorMgmt(error: HttpErrorResponse) {
