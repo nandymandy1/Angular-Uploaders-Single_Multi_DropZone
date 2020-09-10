@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "uploder"
+    }
+  },
+  "defaultProject": "uploder",
+  "cli": {
+    "analytics": "057d7e2f-98a1-40ef-8819-47f8a5b5311c"
+  }
 }

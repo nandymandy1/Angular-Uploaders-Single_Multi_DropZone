@@ -1,0 +1,60 @@
+<style>
+  .file-input {
+    width: 100px !important;
+    height: 100px !important;
+    opacity: 0;
+  }
+
+  .uploaded-img {
+    height: 100px !important;
+  }
+
+  .file-uploader-mask {
+    position: absolute;
+    border-radius: 5px;
+    width: 100px !important;
+    height: 100px !important;
+    border: 2px dotted #ccc;
+  }
+
+  .file-uploader-icon {
+    width: 50px !important;
+    height: 50px !important;
+
+  }
+
+  .dropzone-uploader-mask {
+    width: 95%;
+    position: absolute;
+    border-radius: 5px;
+    height: 200px !important;
+    border: 2px dotted #ccc;
+  }
+
+  .dropzone-input {
+    width: 100% !important;
+    height: 200px !important;
+    opacity: 0;
+  }
+
+</style>
+
+<div class="form-group">
+  <label id="dropzone-uploader" class="text-primary font-weight-bold">Drop Zone</label>
+  <div class="d-flex dropzone-container">
+    <div class="dropzone-uploader-mask d-flex justify-content-center align-items-center">
+      <img class="file-uploader-icon" src="assets/outbox.png" alt="Upload-Icon" />
+    </div>
+    <input class="dropzone-input" type="file" id="dropzone-uploader" (change)="handleFile($event)" />
+  </div>
+  <div class="flex-grow-1" *ngIf="isUploding">
+    <p>
+      <ngb-progressbar [showValue]="true" [striped]="true" type="danger" [value]="70" [max]="150">
+      </ngb-progressbar>
+    </p>
+  </div>
+  <div class="d-flex flex-wrap mt-2" *ngIf="fileURLS.length">
+    <img *ngFor="let fileURL of fileURLS" [src]="fileURL" alt="UploadedImage"
+      class="mt-2 img-thumbnail img-fluid uploaded-img mr-2" />
+  </div>
+</div>

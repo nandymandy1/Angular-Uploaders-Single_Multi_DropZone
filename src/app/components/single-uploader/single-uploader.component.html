@@ -1,0 +1,46 @@
+<style>
+  .file-uploader-icon {
+    width: 35px !important;
+    height: 35px !important;
+  }
+
+  .file-input {
+    width: 100px !important;
+    height: 100px !important;
+    opacity: 0;
+    border: 2px solid #000 !important;
+  }
+
+  .file-uploader-mask {
+    position: absolute;
+    border-radius: 5px;
+    width: 100px !important;
+    height: 100px !important;
+    border: 2px dotted #ccc;
+  }
+
+  .uploaded-img {
+    height: 100px !important;
+  }
+
+</style>
+
+<div class="form-group">
+  <label for="single-uploader" class="text-danger font-weight-bold">Single Uploder</label>
+  <div class="d-flex">
+    <div class="d-flex">
+      <div class="file-uploader-mask d-flex justify-content-center align-items-center">
+        <img class="file-uploader-icon" src="assets/outbox.png" alt="Upload-Icon" />
+      </div>
+      <input class="file-input" type="file" id="single-uploader" (change)="handleFile($event)" />
+    </div>
+    <div class="flex-grow-1 px-2" *ngIf="isUploding">
+      <p>
+        <ngb-progressbar [showValue]="true" [striped]="true" type="danger" [value]="progress" [max]="100">
+        </ngb-progressbar>
+      </p>
+    </div>
+    <img *ngIf="fileURL && !isUploding" [src]="fileURL" alt="UploadedImage"
+      class="img-thumbnail img-fluid uploaded-img ml-3" />
+  </div>
+</div>
