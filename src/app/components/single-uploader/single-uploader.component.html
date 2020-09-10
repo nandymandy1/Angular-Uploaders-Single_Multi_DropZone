@@ -34,13 +34,13 @@
       </div>
       <input class="file-input" type="file" id="single-uploader" (change)="handleFile($event)" />
     </div>
-    <div class="flex-grow-1 px-2" *ngIf="isUploding">
+    <div class="flex-grow-1 px-2" *ngIf="isUploading">
       <p>
         <ngb-progressbar [showValue]="true" [striped]="true" type="danger" [value]="progress" [max]="100">
         </ngb-progressbar>
       </p>
     </div>
-    <img *ngIf="fileURL && !isUploding" [src]="fileURL" alt="UploadedImage"
+    <img *ngIf="fileURL && !isUploading" [src]="fileURL" alt="UploadedImage"
       class="img-thumbnail img-fluid uploaded-img ml-3" />
   </div>
 </div>

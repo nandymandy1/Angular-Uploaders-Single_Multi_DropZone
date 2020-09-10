@@ -40,14 +40,14 @@
 </style>
 
 <div class="form-group">
-  <label id="dropzone-uploader" class="text-primary font-weight-bold">Drop Zone</label>
+  <label id="dropzone-uploader" class="text-danger font-weight-bold">Drop Zone</label>
   <div class="d-flex dropzone-container">
     <div class="dropzone-uploader-mask d-flex justify-content-center align-items-center">
       <img class="file-uploader-icon" src="assets/outbox.png" alt="Upload-Icon" />
     </div>
     <input class="dropzone-input" type="file" id="dropzone-uploader" (change)="handleFile($event)" />
   </div>
-  <div class="flex-grow-1" *ngIf="isUploding">
+  <div class="flex-grow-1" *ngIf="isUploading">
     <p>
       <ngb-progressbar [showValue]="true" [striped]="true" type="danger" [value]="70" [max]="150">
       </ngb-progressbar>

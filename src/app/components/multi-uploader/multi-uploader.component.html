@@ -34,14 +34,14 @@
       </div>
       <input multiple class="file-input" type="file" id="multi-uploader" (change)="handleFile($event)" />
     </div>
-    <div class="flex-grow-1 px-2" *ngIf="isUploding">
+    <div class="flex-grow-1 px-2" *ngIf="isUploading">
       <p>
         <ngb-progressbar [showValue]="true" [striped]="true" type="danger" [value]="progress" [max]="100">
         </ngb-progressbar>
       </p>
     </div>
   </div>
-  <div *ngIf="fileURLS.length && !isUploding" class="d-flex flex-wrap mt-2">
+  <div *ngIf="fileURLS.length && !isUploading" class="d-flex flex-wrap mt-2">
     <img *ngFor="let fileURL of fileURLS" [src]="fileURL" alt="UploadedImage"
       class="img-thumbnail img-fluid uploaded-img mr-1 mt-3" />
   </div>
